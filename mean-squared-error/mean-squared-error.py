@@ -11,10 +11,9 @@ def mean_squared_error(y_pred, y_true):
     if y_pred.shape != y_true.shape:
         return None 
 
-    sum = 0
     
-    for i in range(len(y_pred)):
-        sum += (y_pred[i] - y_true[i])**2
-
-    return sum / len(y_pred)
+    diffrence = (y_pred - y_true)**2
         
+    mse = np.sum(diffrence, axis=0)/len(y_pred)
+
+    return mse
